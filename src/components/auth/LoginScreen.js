@@ -6,7 +6,7 @@ export const LoginScreen = () => {
         <div className='aut__main'>
             <div className='auth__box-container'>
                 <>
-                    <h3 className='auth__title'>Login</h3>
+                    <h3 className='auth__title mb-5'>Login</h3>
 
                     <form>
                         <input
@@ -14,12 +14,14 @@ export const LoginScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Email'}
                             name={'email'}
+                            className={'auth__input'}
                         />
                         <input
                             type={'password'}
                             autoComplete={'off'}
                             placeholder={'Password'}
                             name={'password'}
+                            className={'auth__input'}
                         />
 
                         <button
@@ -29,7 +31,7 @@ export const LoginScreen = () => {
                         </button>
                         <hr />
 
-                        <div>
+                        <div className='auth__social-networks'>
                             <p>Login whit social networks</p>
                             <div
                                 className="google-btn"
