@@ -43,7 +43,7 @@
     overflow-y: scroll;
 }
 
-.journa__entry{
+.journal__entry{
 background-color: white;
 border-radius: 4px;
 color: $dark-grey;
@@ -52,7 +52,24 @@ margin-bottom: 10px;
 overflow: hidden;
 }
 
-.journa__entry-picture{
+.journal__entry-picture{
 height: 70px;
 width: 70px;
+}
+
+.journal__entry-body{
+padding: 10px;
+}
+
+.journal__entry-title{
+font-size: 14px;
+font-weight: bold;
+}
+
+.journal__entry-content{
+font-size: 10px;
+}
+
+.journal__entry-date-box{
+    
 }
