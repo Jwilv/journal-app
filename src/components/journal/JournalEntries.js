@@ -1,4 +1,5 @@
 import React from 'react'
+import { JournaEntry } from './JournaEntry'
 
 export const JournalEntries = () => {
 
