@@ -30,7 +30,6 @@ export const LoginScreen = () => {
                         >
                             Login
                         </button>
-                        <hr />
 
                         <div className='auth__social-networks'>
                             <p>Login whit social networks</p>
