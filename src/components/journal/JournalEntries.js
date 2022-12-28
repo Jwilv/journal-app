@@ -7,6 +7,12 @@ export const JournalEntries = () => {
   return (
     <div className='journal__entries'>
 
+      {
+        entries.map( value => (
+          <JournaEntry key={value} /> 
+        ))
+      }
+
     </div>
   )
 }
