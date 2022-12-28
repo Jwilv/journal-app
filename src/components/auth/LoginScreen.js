@@ -25,7 +25,7 @@ export const LoginScreen = () => {
                         />
 
                         <button
-                        className='btn btn-primary'
+                        className='btn btn-primary btn-block'
                             type='submit'
                         >
                             Login
