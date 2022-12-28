@@ -16,7 +16,7 @@ export const JournaEntry = () => {
             </div>
             <div className='journal__entry-date-box'>
                 <span>Monday</span>
-                <h4>4 te ponen</h4>
+                <h4>31</h4>
             </div>
         </div >
     )
