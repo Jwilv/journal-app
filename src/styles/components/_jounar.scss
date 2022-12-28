@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 350px;
+    width: 450px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -41,5 +41,18 @@
     flex: 1 1 auto;
     margin-top: 30px;
     overflow-y: scroll;
-    
+}
+
+.journa__entry{
+background-color: white;
+border-radius: 4px;
+color: $dark-grey;
+display: flex;
+margin-bottom: 10px;
+overflow: hidden;
+}
+
+.journa__entry-picture{
+height: 70px;
+width: 70px;
 }
