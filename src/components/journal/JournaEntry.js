@@ -2,7 +2,7 @@ import React from 'react'
 
 export const JournaEntry = () => {
     return (
-        <div className='journal__entry'>
+        <div className='journal__entry pointer'>
             <div
                 className='journal__entry-picture'
                 style={{
