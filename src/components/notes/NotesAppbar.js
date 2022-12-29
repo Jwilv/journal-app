@@ -6,10 +6,10 @@ export const NotesAppbar = () => {
             <span>otra vez en primera van a ver a papa</span>
             <div>
                 <button className='btn'>
-                    picture
+                    Picture
                 </button>
                 <button className='btn'>
-                    save
+                    Save
                 </button>
             </div>
         </div>
