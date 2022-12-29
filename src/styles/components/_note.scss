@@ -20,3 +20,41 @@
         font-size: 16px;
     }
 }
+
+.note__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.note__title-input,
+.note__textarea {
+    border: none;
+
+    &:focus {
+        outline: none;
+
+    }
+
+}
+
+.note__title-input {
+    color: $dark-grey;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+}
+
+.note__textarea {
+    color: $dark-grey;
+    font-size: 20px;
+    flex: 1 1 auto;
+    resize: none;
+}
+
+.notes__images img{
+box-shadow: 5px 5px $dark-grey;
+height: 150px;
+}
