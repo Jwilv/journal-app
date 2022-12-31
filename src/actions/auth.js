@@ -1,4 +1,4 @@
-import { firebase, googleAuthProvider } from "../firebase/firebase-config";
+import { googleAuthProvider } from "../firebase/firebase-config";
 import { types } from "../type/types";
 
 export const startLoginEmailPassword = (Email, Password) => {
@@ -11,7 +11,7 @@ export const startLoginEmailPassword = (Email, Password) => {
 
 export const startGoogleLogin = () => {
     return (dispatch) => {
-        firebase.auth().singInWithPopup( googleAuthProvider)
+        googleAuthProvider()
         .then( userCred =>{
             console.log(userCred)
         })
