@@ -10,11 +10,11 @@ export const startLoginEmailPassword = (Email, Password) => {
 }
 
 export const startGoogleLogin = () => {
-    return async(dispatch) => {
-        await googleAuthProvider()
-        .then( userCred =>{
-            console.log(userCred)
-        })
+    return (dispatch) => {
+        googleAuthProvider()
+            .then(({ user }) => {
+                dispatch(login(user.uid, user.displayName))
+            })
     }
 }
 
