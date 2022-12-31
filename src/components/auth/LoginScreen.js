@@ -2,10 +2,11 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { startLoginEmailPassword } from '../../actions/auth';
+import { googleAuthProvider } from '../../firebase/firebase-config';
 import { useForm } from '../../hooks/useForm'
 
 export const LoginScreen = () => {
-    
+
     const dispatch = useDispatch();
 
     const [values, handleInputChanGet] = useForm({
@@ -13,10 +14,17 @@ export const LoginScreen = () => {
         password: '',
     });
 
-    const {email, password} = values;
+    const { email, password } = values;
     const handleLogin = (event) => {
         event.preventDefault();
         dispatch(startLoginEmailPassword(email, password))
+    }
+
+    const handleGoogleLogin = async() => {
+        const user = await googleAuthProvider()
+        .then( userCred =>{
+            console.log(userCred)
+        })
     }
     console.log(values)
     return (
@@ -56,6 +64,7 @@ export const LoginScreen = () => {
                             <p>Login whit social networks</p>
                             <div
                                 className="google-btn"
+                                onClick={handleGoogleLogin}
                             >
                                 <div className="google-icon-wrapper">
                                     <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
