@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { startLoginEmailPassword } from '../../actions/auth';
+import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
 import { googleAuthProvider } from '../../firebase/firebase-config';
 import { useForm } from '../../hooks/useForm'
 
@@ -20,11 +20,8 @@ export const LoginScreen = () => {
         dispatch(startLoginEmailPassword(email, password))
     }
 
-    const handleGoogleLogin = async() => {
-        const user = await googleAuthProvider()
-        .then( userCred =>{
-            console.log(userCred)
-        })
+    const handleGoogleLogin = async () => {
+        dispatch(startGoogleLogin())
     }
     console.log(values)
     return (
