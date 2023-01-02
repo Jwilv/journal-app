@@ -22,6 +22,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Name'}
                             name={'name'}
+                            value={}
                             className={'auth__input'}
                         />
                         <input
@@ -29,6 +30,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Email'}
                             name={'email'}
+                            value={}
                             className={'auth__input'}
                         />
                         <input
@@ -36,6 +38,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Password'}
                             name={'password'}
+                            value={}
                             className={'auth__input'}
                         />
                         <input
@@ -43,6 +46,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Confirm password'}
                             name={'confirm'}
+                            value={}
                             className={'auth__input'}
                         />
                         <button
