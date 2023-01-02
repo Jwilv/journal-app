@@ -2,6 +2,7 @@ import React from 'react'
 import validator from "validator";
 import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
+import { useDispatch } from 'react-redux';
 
 export const RegisterScreen = () => {
 
@@ -13,6 +14,8 @@ export const RegisterScreen = () => {
     });
 
     const { name, email, password, passwordConfirm } = values;
+
+    const dispatch = useDispatch();
 
     const isFormValid = () => {
         if (name.trim().length === 0) {
