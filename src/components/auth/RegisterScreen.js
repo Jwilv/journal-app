@@ -6,8 +6,8 @@ import { useForm } from '../../hooks/useForm'
 export const RegisterScreen = () => {
 
     const [values, handleInputChanGet] = useForm({
-        name: '',
-        email: '',
+        name: 'juan',
+        email: 'juan@gmail.com',
         password: '',
         passwordConfirm: '',
     });
@@ -21,7 +21,7 @@ export const RegisterScreen = () => {
         } else if (!validator.isEmail(email)) {
             console.error('email is not valid')
             return false
-        }else if( password !== passwordConfirm && password.length < 5 ){
+        }else if( password !== passwordConfirm || password.length < 5 ){
             console.error('Password  should  be at least 6 characters and match each other')
             return false 
         }
@@ -74,7 +74,7 @@ export const RegisterScreen = () => {
                         <input
                             type={'password'}
                             autoComplete={'off'}
-                            placeholder={'passwordConfirm password'}
+                            placeholder={'Confirm password'}
                             name={'passwordConfirm'}
                             value={passwordConfirm}
                             onChange={handleInputChanGet}
