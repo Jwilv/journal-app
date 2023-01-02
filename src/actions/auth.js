@@ -9,6 +9,12 @@ export const startLoginEmailPassword = (Email, Password) => {
     }
 }
 
+export const startRegisterwithEmailPasswordName = (email, password, name)=>{
+return(dispatch)=>{
+    
+}
+}
+
 export const startGoogleLogin = () => {
     return (dispatch) => {
         googleAuthProvider()
