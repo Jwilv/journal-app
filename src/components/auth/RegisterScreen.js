@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import { useDispatch, useSelector } from 'react-redux';
 import { removeErro, setError } from '../../actions/ui';
+import { startRegisterwithEmailPasswordName } from '../../actions/auth';
 
 export const RegisterScreen = () => {
 
     const [values, handleInputChanGet] = useForm({
-        name: 'juan',
-        email: 'juan@gmail.com',
-        password: '',
-        passwordConfirm: '',
+        name: 'juandvddv',
+        email: 'juandvzdvzd@gmail.com',
+        password: '123456',
+        passwordConfirm: '123456',
     });
 
     const { name, email, password, passwordConfirm } = values;
@@ -37,7 +38,7 @@ export const RegisterScreen = () => {
 
     const handleRegister = (form) => {
         form.preventDefault()
-        if (isFormValid()) { console.log('el formulario es correcto'); }
+        if (isFormValid()) { dispatch(startRegisterwithEmailPasswordName(email,password)) }
     }
 
 
