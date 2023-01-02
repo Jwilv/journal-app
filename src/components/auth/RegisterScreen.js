@@ -11,7 +11,8 @@ export const RegisterScreen = () => {
         confirm: '',
     });
 
-    const handleRegister = () => {
+    const handleRegister = (form) => {
+        form.preventDefault()
         console.log(values)
     }
 
