@@ -9,10 +9,10 @@ export const RegisterScreen = () => {
         name: '',
         email: '',
         password: '',
-        confirm: '',
+        passwordConfirm: '',
     });
 
-    const { name, email, password, confirm } = values;
+    const { name, email, password, passwordConfirm } = values;
 
     const isFormValid = () => {
         if (name.trim().length === 0) {
@@ -21,7 +21,7 @@ export const RegisterScreen = () => {
         } else if (!validator.isEmail(email)) {
             console.error('email is not valid')
             return false
-        }else if( password !== confirm && password.length < 5 ){
+        }else if( password !== passwordConfirm && password.length < 5 ){
             console.error('Password  should  be at least 6 characters and match each other')
             return false 
         }
@@ -74,9 +74,9 @@ export const RegisterScreen = () => {
                         <input
                             type={'password'}
                             autoComplete={'off'}
-                            placeholder={'Confirm password'}
-                            name={'confirm'}
-                            value={confirm}
+                            placeholder={'passwordConfirm password'}
+                            name={'passwordConfirm'}
+                            value={passwordConfirm}
                             onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
