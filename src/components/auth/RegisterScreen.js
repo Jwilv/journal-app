@@ -16,7 +16,7 @@ export const RegisterScreen = () => {
             <div className='auth__box-container'>
                 <>
                     <h3 className='auth__title mb-5'>Register</h3>
-                    <form>
+                    <form onSubmit={}>
                         <input
                             type={'text'}
                             autoComplete={'off'}
