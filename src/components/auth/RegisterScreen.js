@@ -4,7 +4,12 @@ import { useForm } from '../../hooks/useForm'
 
 export const RegisterScreen = () => {
 
-    const [values, handleInputChanGet] = useForm();
+    const [values, handleInputChanGet] = useForm({
+        name:'',
+        email:'',
+        password:'',
+        confirm:'',
+    });
 
     return (
         <div className='aut__main'>
