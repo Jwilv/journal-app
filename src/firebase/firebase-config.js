@@ -33,4 +33,5 @@ export {
     db,
     googleAuthProvider,
     signup,
+    auth,
 }
