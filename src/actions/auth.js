@@ -17,6 +17,7 @@ export const startRegisterwithEmailPasswordName = (email, password, name) => {
                 await updateProfile( auth.currentUser, {displayName:name} )
                 dispatch(login(user.uid, user.displayName))
             })
+            .catch( e => console.log(e))
     }
 }
 
