@@ -36,7 +36,7 @@ export const RegisterScreen = () => {
 
     const handleRegister = (form) => {
         form.preventDefault()
-        if (isFormValid()){ console.log('el formulario es correcto'); }
+        if (isFormValid()) { console.log('el formulario es correcto'); }
     }
 
 
