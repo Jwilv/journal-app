@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 
 export const RegisterScreen = () => {
+
+    const [values, handleInputChanGet] = useForm();
+
     return (
         <div className='aut__main'>
             <div className='auth__box-container'>
