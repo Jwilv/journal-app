@@ -5,18 +5,22 @@ import { useForm } from '../../hooks/useForm'
 export const RegisterScreen = () => {
 
     const [values, handleInputChanGet] = useForm({
-        name:'',
-        email:'',
-        password:'',
-        confirm:'',
+        name: '',
+        email: '',
+        password: '',
+        confirm: '',
     });
+
+    const handleRegister = () => {
+
+    }
 
     return (
         <div className='aut__main'>
             <div className='auth__box-container'>
                 <>
                     <h3 className='auth__title mb-5'>Register</h3>
-                    <form onSubmit={}>
+                    <form onSubmit={handleRegister}>
                         <input
                             type={'text'}
                             autoComplete={'off'}
