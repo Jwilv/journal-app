@@ -12,7 +12,7 @@ export const RegisterScreen = () => {
     });
 
     const handleRegister = () => {
-
+        console.log(values)
     }
 
     return (
