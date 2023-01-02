@@ -27,7 +27,7 @@ export const RegisterScreen = () => {
                             placeholder={'Name'}
                             name={'name'}
                             value={values.name}
-                            onChange={}
+                            onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
                         <input
@@ -36,7 +36,7 @@ export const RegisterScreen = () => {
                             placeholder={'Email'}
                             name={'email'}
                             value={values.email}
-                            onChange={}
+                            onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
                         <input
@@ -45,7 +45,7 @@ export const RegisterScreen = () => {
                             placeholder={'Password'}
                             name={'password'}
                             value={values.password}
-                            onChange={}
+                            onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
                         <input
@@ -54,7 +54,7 @@ export const RegisterScreen = () => {
                             placeholder={'Confirm password'}
                             name={'confirm'}
                             value={values.confirm}
-                            onChange={}
+                            onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
                         <button
