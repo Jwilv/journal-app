@@ -11,6 +11,8 @@ export const RegisterScreen = () => {
         confirm: '',
     });
 
+    const {name,email,password,confirm} = values;
+
     const handleRegister = (form) => {
         form.preventDefault()
         console.log(values)
@@ -27,7 +29,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Name'}
                             name={'name'}
-                            value={values.name}
+                            value={name}
                             onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
@@ -36,7 +38,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Email'}
                             name={'email'}
-                            value={values.email}
+                            value={email}
                             onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
@@ -45,7 +47,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Password'}
                             name={'password'}
-                            value={values.password}
+                            value={password}
                             onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
@@ -54,7 +56,7 @@ export const RegisterScreen = () => {
                             autoComplete={'off'}
                             placeholder={'Confirm password'}
                             name={'confirm'}
-                            value={values.confirm}
+                            value={confirm}
                             onChange={handleInputChanGet}
                             className={'auth__input'}
                         />
