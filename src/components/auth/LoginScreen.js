@@ -22,7 +22,6 @@ export const LoginScreen = () => {
     const handleGoogleLogin = async () => {
         dispatch(startGoogleLogin())
     }
-    console.log(values)
     return (
         <div className='aut__main'>
             <div className='auth__box-container'>
