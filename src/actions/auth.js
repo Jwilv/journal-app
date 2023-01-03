@@ -44,3 +44,7 @@ export const login = (uid, displayName) => ({
 const startLoading = ()=>({
     type: types.uiStartLoading,
 })
+
+const finishLoading =()=>({
+    type: types.uiFinishLoading
+})
