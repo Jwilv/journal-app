@@ -6,6 +6,7 @@ import { login } from '../actions/auth'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
+import { LoudingScreen } from '../components/Louding/LoudingScreen'
 import { auth } from '../firebase/firebase-config'
 
 export const AppRouter = () => {
