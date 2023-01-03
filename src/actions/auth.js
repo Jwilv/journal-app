@@ -10,7 +10,10 @@ export const startLoginEmailPassword = (email, password) => {
             dispatch(login(user.uid, user.displayName))
             dispatch(finishLoading());
         })
-        .catch( error => console.log(error))
+        .catch( error => {
+            console.log(error)
+            dispatch(finishLoading());
+        })
         
     }
 }
