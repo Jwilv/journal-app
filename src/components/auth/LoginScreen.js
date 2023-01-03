@@ -52,6 +52,7 @@ export const LoginScreen = () => {
                         <button
                             className='btn btn-primary btn-block'
                             type='submit'
+                            disabled={ loading }
                         >
                             Login
                         </button>
