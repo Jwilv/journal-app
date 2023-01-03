@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, googleAuthProvider, signup } from "../firebase/firebase-config";
 import { types } from "../type/types";
+import { finishLoading, startLoading } from "./ui";
 
 export const startLoginEmailPassword = (email, password) => {
     return (dispatch) => {
@@ -44,12 +45,4 @@ export const login = (uid, displayName) => ({
         uid,
         displayName
     }
-})
-
-const startLoading = ()=>({
-    type: types.uiStartLoading,
-})
-
-const finishLoading =()=>({
-    type: types.uiFinishLoading
 })
