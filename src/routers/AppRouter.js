@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { login } from '../actions/auth'
@@ -12,14 +12,21 @@ export const AppRouter = () => {
 
     const dispatch = useDispatch();
 
+    const [cheking, setCheking] = useState(true)
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             console.log(user)
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
             }
+            setCheking(false)
         })
     }, [dispatch])
+
+    if(cheking){
+        return <LoudingScreen /> 
+    }
 
     return (
 
