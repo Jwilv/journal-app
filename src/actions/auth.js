@@ -40,3 +40,7 @@ export const login = (uid, displayName) => ({
         displayName
     }
 })
+
+const startLoading = ()=>({
+    type: types.uiStartLoading,
+})
