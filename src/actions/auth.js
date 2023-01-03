@@ -4,9 +4,11 @@ import { types } from "../type/types";
 
 export const startLoginEmailPassword = (email, password) => {
     return (dispatch) => {
+        dispatch(startLoading());
         signInWithEmailAndPassword(auth, email, password)
         .then( ({user})=>{
             dispatch(login(user.uid, user.displayName))
+            dispatch(finishLoading());
         })
         .catch( error => console.log(error))
         
