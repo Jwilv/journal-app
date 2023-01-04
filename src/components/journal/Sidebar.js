@@ -7,7 +7,7 @@ export const Sidebar = () => {
 
     const dispatch = useDispatch();
 
-    handleLogout = ()=>{
+    const handleLogout = ()=>{
         dispatch( startLogout() );
     }
     return (
