@@ -9,6 +9,7 @@ import { JournalScreen } from '../components/journal/JournalScreen'
 import { LoudingScreen } from '../components/Louding/LoudingScreen'
 import { auth } from '../firebase/firebase-config'
 import { PrivateRouter } from './PrivateRouter'
+import { PublicRouter } from './PublicRouter'
 
 export const AppRouter = () => {
 
@@ -33,16 +34,26 @@ export const AppRouter = () => {
     return (
 
         <Routes>
-
-            <Route path='/login' element={<LoginScreen />} />
-            <Route path='/register' element={<RegisterScreen />} />
-            <Route path='*' element={<LoginScreen />} />
-
+            <Route path='/login' element={
+                <PublicRouter>
+                    <LoginScreen />
+                </PublicRouter>}
+            />
+            <Route path='/register' element={
+                <PublicRouter>
+                    <RegisterScreen />
+                </PublicRouter>}
+            />
+            <Route path='*' element={
+                <PublicRouter>
+                    <LoginScreen />
+                </PublicRouter>}
+            />
             <Route path='/' element={
                 <PrivateRouter >
                     <JournalScreen />
-                </PrivateRouter>} />
+                </PrivateRouter>}
+            />
         </Routes>
-
     )
 }
