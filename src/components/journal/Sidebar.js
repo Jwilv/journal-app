@@ -1,7 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { JournalEntries } from './JournalEntries'
 
 export const Sidebar = () => {
+
+    const dispatch = useDispatch();
+
+    handleLogout = ()=>{
+
+    }
     return (
         <aside className='journal__sidebar'>
             <div className='journal__sidebar-navbar'>
