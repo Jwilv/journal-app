@@ -28,7 +28,9 @@ export const startRegisterwithEmailPasswordName = (email, password, name) => {
                 await updateProfile(auth.currentUser, { displayName: name })
                 dispatch(login(user.uid, user.displayName))
             })
-            .catch(e => console.log(e))
+            .catch(error => {
+                Swal.fire('Erro', error.message, 'error');
+            })
     }
 }
 
@@ -37,6 +39,9 @@ export const startGoogleLogin = () => {
         googleAuthProvider()
             .then(({ user }) => {
                 dispatch(login(user.uid, user.displayName))
+            })
+            .catch(error => {
+                Swal.fire('Erro', error.message, 'error');
             })
     }
 }
@@ -50,9 +55,9 @@ export const login = (uid, displayName) => ({
 })
 
 export const startLogout = () => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         await signOut(auth);
-        dispatch( logout() )
+        dispatch(logout())
     }
 }
 
