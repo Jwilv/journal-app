@@ -3,13 +3,11 @@ import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-export const PublicRouter = ({ children }) => {
+export const PublicRouter = ({ children, logged }) => {
 
-    const { uid } = useSelector(state => state.ui)
-
-    return (!uid)
-        ? children
-        : <Navigate to={'/'} />
+    return (logged)
+        ? <Navigate to={'/'} />
+        : children
 }
 
 PublicRouter.propTypes = {

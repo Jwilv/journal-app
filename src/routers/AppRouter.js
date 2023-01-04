@@ -16,12 +16,16 @@ export const AppRouter = () => {
     const dispatch = useDispatch();
 
     const [cheking, setCheking] = useState(true)
+    const [isLogged, setIsLogged] = useState(false)
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             console.log(user)
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
+                setIsLogged(true)
+            } else {
+                setIsLogged(false)
             }
             setCheking(false)
         })
@@ -35,22 +39,22 @@ export const AppRouter = () => {
 
         <Routes>
             <Route path='/login' element={
-                <PublicRouter>
+                <PublicRouter logged={isLogged} >
                     <LoginScreen />
                 </PublicRouter>}
             />
             <Route path='/register' element={
-                <PublicRouter>
+                <PublicRouter logged={isLogged} >
                     <RegisterScreen />
                 </PublicRouter>}
             />
             <Route path='*' element={
-                <PublicRouter>
+                <PublicRouter logged={isLogged} >
                     <LoginScreen />
                 </PublicRouter>}
             />
             <Route path='/' element={
-                <PrivateRouter >
+                <PrivateRouter logged={isLogged} >
                     <JournalScreen />
                 </PrivateRouter>}
             />
