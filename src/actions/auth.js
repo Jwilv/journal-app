@@ -54,3 +54,7 @@ export const startLogout = () => {
         dispatch( logout() )
     }
 }
+
+export const logout = () => ({
+    type: types.logout
+})
