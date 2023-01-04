@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 import { signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { auth, googleAuthProvider, signup } from "../firebase/firebase-config";
 import { types } from "../type/types";
@@ -12,7 +14,7 @@ export const startLoginEmailPassword = (email, password) => {
                 dispatch(finishLoading());
             })
             .catch(error => {
-                console.log(error)
+                Swal.fire('Erro', error.message, 'error');
                 dispatch(finishLoading());
             })
 
