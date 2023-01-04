@@ -22,7 +22,7 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
             }
-            setCheking(false) 
+            setCheking(false)
         })
     }, [dispatch])
 
@@ -38,9 +38,10 @@ export const AppRouter = () => {
             <Route path='/register' element={<RegisterScreen />} />
             <Route path='*' element={<LoginScreen />} />
 
-            <Route path='/' element={<PrivateRouter >
-                <JournalScreen />
-            </PrivateRouter>} />
+            <Route path='/' element={
+                <PrivateRouter >
+                    <JournalScreen />
+                </PrivateRouter>} />
         </Routes>
 
     )
