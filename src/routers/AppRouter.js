@@ -14,19 +14,23 @@ export const AppRouter = () => {
     const dispatch = useDispatch();
 
     const [cheking, setCheking] = useState(true)
+    const [isLoggedIn, setisLoggedIn] = useState(false)
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             console.log(user)
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
+                setisLoggedIn(true)
+            } else {
+                setisLoggedIn(false)
             }
             setCheking(false)
         })
     }, [dispatch])
 
-    if(cheking){
-        return <LoudingScreen /> 
+    if (cheking) {
+        return <LoudingScreen />
     }
 
     return (
