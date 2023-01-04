@@ -8,13 +8,13 @@ import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
 import { LoudingScreen } from '../components/Louding/LoudingScreen'
 import { auth } from '../firebase/firebase-config'
+import { PrivateRouter } from './PrivateRouter'
 
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
 
     const [cheking, setCheking] = useState(true)
-    const [isLoggedIn, setisLoggedIn] = useState(false)
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -41,7 +41,9 @@ export const AppRouter = () => {
             <Route path='/register' element={<RegisterScreen />} />
             <Route path='*' element={<LoginScreen />} />
 
-            <Route path='/' element={<JournalScreen />} />
+            <Route path='/' element={<PrivateRouter >
+                <JournalScreen />
+            </PrivateRouter>} />
         </Routes>
 
     )
