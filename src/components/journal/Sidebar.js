@@ -7,7 +7,7 @@ export const Sidebar = () => {
     const dispatch = useDispatch();
 
     handleLogout = ()=>{
-
+        dispatch();
     }
     return (
         <aside className='journal__sidebar'>
@@ -20,6 +20,7 @@ export const Sidebar = () => {
 
                 <button
                     className='btn'
+                    onClick={handleLogout}
                 >
                     Logout
                 </button>
