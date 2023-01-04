@@ -21,11 +21,8 @@ export const AppRouter = () => {
             console.log(user)
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
-                setisLoggedIn(true)
-            } else {
-                setisLoggedIn(false)
             }
-            setCheking(false)
+            setCheking(false) 
         })
     }, [dispatch])
 
