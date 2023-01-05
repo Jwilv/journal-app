@@ -1,6 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
-import {types} from '../type/types'
+import { types } from '../type/types'
 
 
 export const startNewNote = () => {
@@ -12,22 +12,22 @@ export const startNewNote = () => {
             body: '',
             date: new Date().getTime(),
         }
-        const docRef  = await addDoc(collection(db, `${uid}`, 'journal', 'notes'), newNote);
+        const docRef = await addDoc(collection(db, `${uid}`, 'journal', 'notes'), newNote);
         dispatch(activeNote(docRef.id, newNote))
         console.log(docRef);
     }
 
 }
 
-export const activeNote = (id, note)=>({
-    type:types.notesActive,
-    payload:{
+export const activeNote = (id, note) => ({
+    type: types.notesActive,
+    payload: {
         id,
         ...note,
     }
 })
 
-export const setNotes = (notes)=>({
-type:types.notesLoad,
-payload:notes,
+export const setNotes = (notes) => ({
+    type: types.notesLoad,
+    payload: notes,
 })
