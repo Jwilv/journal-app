@@ -1,6 +1,10 @@
 import React from 'react'
+import moment from 'moment'
 
-export const JournaEntry = ({ id, title, body, url }) => {
+export const JournaEntry = ({ id, title, body, url, date }) => {
+
+    const noteDate = moment(date)
+
     return (
         <div className='journal__entry pointer'>
             {
@@ -22,8 +26,8 @@ export const JournaEntry = ({ id, title, body, url }) => {
                 </p>
             </div>
             <div className='journal__entry-date-box'>
-                <span>Monday</span>
-                <h4>31</h4>
+                <span>{ noteDate.format('dddd')}</span>
+                <h4>{ noteDate.format('Do')}</h4>
             </div>
         </div >
     )
