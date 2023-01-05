@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { login } from '../actions/auth'
-import { setNotes } from '../actions/notes'
+import { startLoudinNotes } from '../actions/notes'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
 import { LoudingScreen } from '../components/Louding/LoudingScreen'
 import { auth } from '../firebase/firebase-config'
-import { loadNotes } from '../helpers/loadNotes'
 import { PrivateRouter } from './PrivateRouter'
 import { PublicRouter } from './PublicRouter'
 
@@ -25,8 +24,7 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
                 setIsLogged(true)
-                const notes = await loadNotes(user.uid)
-                dispatch(setNotes(notes));
+                dispatch(startLoudinNotes(user.uid));
             } else {
                 setIsLogged(false)
             }
