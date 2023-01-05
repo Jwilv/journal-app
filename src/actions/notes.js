@@ -1,5 +1,5 @@
 
 
-export const notes = ()=>{
+export const startNewNote = ()=>{
 
 }
