@@ -1,5 +1,5 @@
 
 
-export const notesReducer = ()=>{
-    
+export const notes = ()=>{
+
 }
