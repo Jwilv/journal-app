@@ -8,6 +8,7 @@ import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
 import { LoudingScreen } from '../components/Louding/LoudingScreen'
 import { auth } from '../firebase/firebase-config'
+import { loadNotes } from '../helpers/loadNotes'
 import { PrivateRouter } from './PrivateRouter'
 import { PublicRouter } from './PublicRouter'
 
@@ -23,6 +24,7 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
                 setIsLogged(true)
+                loadNotes(user.uid)
             } else {
                 setIsLogged(false)
             }
