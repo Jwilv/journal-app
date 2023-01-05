@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { login } from '../actions/auth'
+import { setNotes } from '../actions/notes'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
@@ -20,11 +21,12 @@ export const AppRouter = () => {
     const [isLogged, setIsLogged] = useState(false)
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async(user) => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
                 setIsLogged(true)
-                const notes = loadNotes(user.uid)
+                const notes = await loadNotes(user.uid)
+                dispatch(setNotes(notes));
             } else {
                 setIsLogged(false)
             }
