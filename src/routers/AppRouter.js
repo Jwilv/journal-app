@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { login } from '../actions/auth'
-import { startLoudinNotes } from '../actions/notes'
+import { startLoudingNotes } from '../actions/notes'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { JournalScreen } from '../components/journal/JournalScreen'
@@ -24,7 +24,7 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
                 setIsLogged(true)
-                dispatch(startLoudinNotes(user.uid));
+                dispatch(startLoudingNotes(user.uid));
             } else {
                 setIsLogged(false)
             }

@@ -34,7 +34,7 @@ export const setNotes = (notes) => ({
     payload: notes,
 })
 
-export const startLoudinNotes = (uid) => {
+export const startLoudingNotes = (uid) => {
     return async (dispatch) => {
         const notes = await loadNotes(uid);
         dispatch(setNotes(notes))
