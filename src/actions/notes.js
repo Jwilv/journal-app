@@ -43,7 +43,10 @@ export const refreshNote = (id, note)=>({
 type:types.notesUpdate,
 payload:{
     id,
-    note,
+    note:{
+        id,
+        note
+    },
 }
 })
 
