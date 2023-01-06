@@ -10,7 +10,7 @@ export const loadNotes = async(uid)=>{
     notesSnap.forEach( note =>{
         notes.push({
             id: note.id,
-            ...note,
+            ...note.data(),
         })
     })
     return notes;
