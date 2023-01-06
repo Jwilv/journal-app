@@ -15,7 +15,6 @@ export const startNewNote = () => {
         }
         const docRef = await addDoc(collection(db, `${uid}`, 'journal', 'notes'), newNote);
         dispatch(activeNote(docRef.id, newNote))
-        console.log(docRef);
     }
 
 }
