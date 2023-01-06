@@ -39,6 +39,14 @@ export const startLoudingNotes = (uid) => {
     }
 }
 
+export const refreshNote = (id, note)=>({
+type:types.notesLoad,
+payload:{
+    id,
+    note,
+}
+})
+
 export const startSaveNote = (notes) =>{
 return async( dispatch, getState )=>{
     const { uid } = getState().auth;
