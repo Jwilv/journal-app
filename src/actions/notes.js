@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 import { loadNotes } from "../helpers/loadNotes";
@@ -60,5 +61,6 @@ return async( dispatch, getState )=>{
     delete noteToFirestore.id;
     await updateDoc(doc(db, `${uid}`, 'journal', 'notes', `${notes.id}`), noteToFirestore);
     dispatch(refreshNote(notes.id, noteToFirestore))
+    Swal.fire('Saved', notes.title, 'success')
 }
 }
