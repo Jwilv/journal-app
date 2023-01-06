@@ -56,5 +56,6 @@ return async( dispatch, getState )=>{
     const noteToFirestore = {...notes};
     delete noteToFirestore.id;
     await updateDoc(doc(db, `${uid}`, 'journal', 'notes', `${notes.id}`), noteToFirestore);
+    dispatch(refreshNote(notes.id, noteToFirestore))
 }
 }
