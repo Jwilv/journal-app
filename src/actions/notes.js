@@ -40,7 +40,7 @@ export const startLoudingNotes = (uid) => {
 }
 
 export const refreshNote = (id, note)=>({
-type:types.notesLoad,
+type:types.notesUpdate,
 payload:{
     id,
     note,
