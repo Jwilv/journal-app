@@ -25,6 +25,10 @@ export const NoteScreen = () => {
         dispatch(activeNote(values.id, { ...values } ) );
     }, [values, dispatch])
 
+    const handleDeleteNote = ()=>{
+        // dispatch();
+    }
+
     return (
         <div className='note__main-content'>
             <NotesAppbar />
@@ -58,7 +62,10 @@ export const NoteScreen = () => {
                 }
             </div>
 
-            <button className='btn btn-danger'>
+            <button 
+            className='btn btn-danger'
+            onClick={handleDeleteNote}
+            >
                 Delete
             </button>
 
