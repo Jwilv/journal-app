@@ -22,7 +22,7 @@ export const NoteScreen = () => {
     }, [reset, note])
 
     useEffect(() => {
-        dispatch(activeNote(values.id, { ...values, url:'1234' } ) );
+        dispatch(activeNote(values.id, { ...values } ) );
     }, [values, dispatch])
 
     return (
@@ -51,7 +51,7 @@ export const NoteScreen = () => {
                     (url)
                     && (
                         <div className='notes__images'>
-                            <img src='https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg'
+                            <img src={`${url}`}
                                 alt='img' />
                         </div>
                     )

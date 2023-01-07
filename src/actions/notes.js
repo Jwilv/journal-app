@@ -44,10 +44,7 @@ export const refreshNote = (id, note)=>({
 type:types.notesUpdate,
 payload:{
     id,
-    note:{
-        id,
-        note
-    },
+    note,
 }
 })
 
@@ -60,7 +57,10 @@ return async( dispatch, getState )=>{
     const noteToFirestore = {...notes};
     delete noteToFirestore.id;
     await updateDoc(doc(db, `${uid}`, 'journal', 'notes', `${notes.id}`), noteToFirestore);
-    dispatch(refreshNote(notes.id, noteToFirestore))
+    dispatch(refreshNote(notes.id, {
+        ...notes,
+        date: new Date().getTime(),
+    }))
     Swal.fire('Saved', notes.title, 'success')
 }
 }
