@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 import { loadNotes } from "../helpers/loadNotes";
 import { types } from '../type/types'
@@ -84,4 +84,12 @@ return async(dispatch, getState)=>{
     Swal.close();
 
 }
+}
+
+export const startDeletingNote = (id)=>{
+    return async(dispatch, getState)=>{
+        const {uid} = getState().notes;
+        await deleteDoc(doc(db, `${uid}`, 'journal', 'notes', `${id}`));
+        dispatch();
+    }
 }
