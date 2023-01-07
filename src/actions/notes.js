@@ -6,6 +6,15 @@ import { types } from '../type/types'
 import { fileUpload } from '../helpers/fileUpload';
 
 
+
+export const activeNote = (id, note) => ({
+    type: types.notesActive,
+    payload: {
+        id,
+        ...note,
+    }
+})
+
 export const startNewNote = () => {
 
     return async (dispatch, getState) => {
@@ -21,13 +30,6 @@ export const startNewNote = () => {
 
 }
 
-export const activeNote = (id, note) => ({
-    type: types.notesActive,
-    payload: {
-        id,
-        ...note,
-    }
-})
 
 export const setNotes = (notes) => ({
     type: types.notesLoad,
@@ -86,6 +88,11 @@ return async(dispatch, getState)=>{
 }
 }
 
+const deleteNote = (id)=>({
+    type:types.notesDelete,
+    payload:id
+    })
+
 export const startDeletingNote = (id)=>{
     return async(dispatch, getState)=>{
         const {uid} = getState().auth;
@@ -94,10 +101,7 @@ export const startDeletingNote = (id)=>{
     }
 }
 
-const deleteNote = (id)=>({
-type:types.notesDelete,
-payload:id
-})
+
 
 export const noteLogout = ()=>({
 type:types.notesLogoutCleaning,
