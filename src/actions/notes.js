@@ -64,3 +64,12 @@ return async( dispatch, getState )=>{
     Swal.fire('Saved', notes.title, 'success')
 }
 }
+
+export const startUploadingFile = (file)=>{
+return(dispatch, getState)=>{
+    const {actives:activeNote} = getState().notes;
+    console.log(activeNote);
+    console.log(file);
+
+}
+}
