@@ -79,6 +79,7 @@ return async(dispatch, getState)=>{
     })
     const fileUrl = await fileUpload(file);
     activeNote.url = fileUrl;
+    activeNote.date = new Date().getTime();
     dispatch(startSaveNote(activeNote));
     Swal.close();
 

@@ -8,7 +8,7 @@ export const NoteScreen = () => {
 
     const { active: note } = useSelector(state => state.notes)
     const [values, handleInputChanGet, reset] = useForm(note)
-    const { title, body, url } = values;
+    const { title, body, } = values;
 
     const dispatch = useDispatch();
 
@@ -48,10 +48,10 @@ export const NoteScreen = () => {
                 </textarea>
 
                 {
-                    (url)
+                    (note.url)
                     && (
                         <div className='notes__images'>
-                            <img src={`${url}`}
+                            <img src={note.url}
                                 alt='img' />
                         </div>
                     )
