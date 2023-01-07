@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword, signOut, updateProfile } from "firebase/aut
 import { auth, googleAuthProvider, signup } from "../firebase/firebase-config";
 import { types } from "../type/types";
 import { finishLoading, startLoading } from "./ui";
+import { noteLogout } from './notes';
 
 export const startLoginEmailPassword = (email, password) => {
     return (dispatch) => {
@@ -57,7 +58,8 @@ export const login = (uid, displayName) => ({
 export const startLogout = () => {
     return async (dispatch) => {
         await signOut(auth);
-        dispatch(logout())
+        dispatch(logout());
+        dispatch(noteLogout())
     }
 }
 
