@@ -88,9 +88,9 @@ return async(dispatch, getState)=>{
 
 export const startDeletingNote = (id)=>{
     return async(dispatch, getState)=>{
-        const {uid} = getState().notes;
+        const {uid} = getState().auth;
         await deleteDoc(doc(db, `${uid}`, 'journal', 'notes', `${id}`));
-        dispatch(deleteNote);
+        dispatch(deleteNote(id));
     }
 }
 
