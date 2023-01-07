@@ -93,3 +93,8 @@ export const startDeletingNote = (id)=>{
         dispatch();
     }
 }
+
+const deleteNote = (id)=>({
+type:types.notesDelete,
+payload:id
+})
