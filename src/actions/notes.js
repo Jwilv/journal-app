@@ -90,7 +90,7 @@ export const startDeletingNote = (id)=>{
     return async(dispatch, getState)=>{
         const {uid} = getState().notes;
         await deleteDoc(doc(db, `${uid}`, 'journal', 'notes', `${id}`));
-        dispatch();
+        dispatch(deleteNote);
     }
 }
 
