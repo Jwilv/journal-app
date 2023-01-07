@@ -67,7 +67,7 @@ return async( dispatch, getState )=>{
 
 export const startUploadingFile = (file)=>{
 return(dispatch, getState)=>{
-    const {actives:activeNote} = getState().notes;
+    const {active:activeNote} = getState().notes;
     console.log(activeNote);
     console.log(file);
 
