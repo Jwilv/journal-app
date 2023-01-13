@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { NoteScreen } from '../notes/NoteScreen'
 import { NothingSelected } from './NothingSelected'
 import { Sidebar } from './Sidebar'
+import {FabSidebar} from '../ui/FabSidebar'
 
 export const JournalScreen = () => {
 
@@ -16,6 +17,7 @@ export const JournalScreen = () => {
                     ? <NoteScreen />
                     : <NothingSelected />
                 }
+                <FabSidebar />
                 
             </main>
         </div>
