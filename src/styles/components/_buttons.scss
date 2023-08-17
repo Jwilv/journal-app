@@ -38,6 +38,9 @@
     &:hover{
         background-color: darken($color: red, $amount: 12);
     }
+
+    width: 150px !important;
+    margin: auto;
 }
 
 .btn-block{

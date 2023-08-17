@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { useDispatch } from 'react-redux'
 import { activeNote } from '../../actions/notes'
+import { setSidebarState } from '../../actions/sidebar'
 
 
 export const JournaEntry = ({ id, title, body, url, date }) => {
@@ -17,6 +18,7 @@ export const JournaEntry = ({ id, title, body, url, date }) => {
             url,
             date,
         }));
+        dispatch(setSidebarState(false))
     }
 
     return (
