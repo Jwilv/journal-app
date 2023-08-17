@@ -8,15 +8,20 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 450px;
+    width: 500px;
     padding-left: 10px;
     padding-right: 10px;
+    transition: all .3s ease;
+    &.sidebar-none{
+        width: 0;
+        padding: 0;
+    }
 }
 
 .journal__sidebar-navbar {
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 130px;
 }
 
 .journal__sidebar-navbar h3 {

@@ -9,6 +9,7 @@ export const Sidebar = () => {
     const dispatch = useDispatch();
 
     const {name} = useSelector(state => state.auth);
+    const {active : activeSidebar} = useSelector(state => state.sidebar);
 
     const handleAddNewEntry = ()=>{
         dispatch(startNewNote());
@@ -18,7 +19,7 @@ export const Sidebar = () => {
         dispatch( startLogout() );
     }
     return (
-        <aside className='journal__sidebar'>
+        <aside className={`journal__sidebar ${!activeSidebar && 'sidebar-none'}`}>
             <div className='journal__sidebar-navbar'>
 
                 <h3 className='mt-5'>

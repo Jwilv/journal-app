@@ -3,6 +3,7 @@ import moment from 'moment'
 import { useDispatch } from 'react-redux'
 import { activeNote } from '../../actions/notes'
 
+
 export const JournaEntry = ({ id, title, body, url, date }) => {
 
     const noteDate = moment(date)

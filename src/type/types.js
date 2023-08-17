@@ -17,6 +17,8 @@ export const types ={
     notesDelete: '[notes] Delete note',
     notesLogoutCleaning: '[notes] Logout cleaning',
 
+    sidebarSet:'[sidebar] Set state'
+
 
 
 }

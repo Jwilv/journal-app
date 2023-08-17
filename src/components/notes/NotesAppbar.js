@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { startSaveNote, startUploadingFile } from '../../actions/notes'
+import { startSaveNote, startUploadingFile } from '../../actions/notes';
 
 export const NotesAppbar = () => {
 
